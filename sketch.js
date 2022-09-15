@@ -1,18 +1,38 @@
-let f1,f2 ;
+let downtown ;
+
+function preload(){
+  downtown = loadSound("assets/downtown.mp3");
+}
 
 
 function setup() {
   createCanvas(500, 500);
-  f1 = loadFont("assets/Sketch3D.otf");
-  f2 = loadFont("assets/VIRTUALITYDEMO.otf");
   textAlign(CENTER);
+  downtown.play();
 }
+
+
 
 function draw() {
 background("black");
-fill("white");
-textFont(f1, 48) ;
-text("hello there!", width / 2, 100);
-textFont(f2, 24) ;
-text("I am big Regg", width / 2, 200);
+fill("white")
+text("the name of the song is downtown and I liked it because the beat was cool", 10,10,400,400)
+}
+
+function mouseReleased() {
+  if (downtown.isPlaying()) {
+    downtown.pause();
+  } else {
+    downtown.play();
+  }
+}
+
+
+
+
+
+
+
+function touchStarted() {
+  getAudioContext().resume();
 }
