@@ -306,3 +306,4 @@ function detectBeat(level) {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
